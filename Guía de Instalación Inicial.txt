@@ -29,4 +29,45 @@ cd /tmp
 wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.6.tar.gz
 tar xzf nagioscore.tar.gz
 
+Compilamos nagios
+
+cd /tmp/nagioscore-nagios-4.4.6/
+./configure --with-httpd-conf=/etc/apache2/sites-enabled
+make all
+
+Creación del usuario y grupo nagios, y adición del usuario www-data al grupo nagios
+
+sudo make install-groups-users
+sudo usermod -a -G nagios www-data
+
+Instalar los binarios
+
+make install
+
+Instalar el demonio y caracteristicas necesarias para que funcione completamente nagios
+
+make install-daemoninit
+make install-commandmode
+make install-config
+make install-webconf
+sudo a2enmod rewrite
+sudo a2enmod cgi
+
+Añadir una regla a iptables para aceptar el acceso por el puerto 80
+sudo iptables -I INPUT -p tcp --destination-port 80 -j ACCEPT
+apt-get install -y iptables-persistent
+
+Crear un usuario Apache para acceder a nagios 
+
+htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+Ingresar contraseña
+
+Iniciar el servidor web 
+
+sudo systemctl restart apache2.service
+
+Iniciar el demonio de nagios
+
+systemctl start nagios.service
+
 
