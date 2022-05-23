@@ -1,7 +1,20 @@
 Para realizar la instalación de Nagios asi como sus pre-requisitos necesitamos tener privilegios de administrador.
 
-Si usas Debian coloca el siguiente comando y agrega la contrasañe de root
+Si usas Debian coloca el siguiente comando
 
-'''
-su
-'''
+$su
+
+Si usus Raspbian coloca el siguiente comando
+
+$sudo -i
+
+Es importante verificar que selinux este en modo permisivo o no este instalado
+
+#getenforce
+
+Si el comando anteriror indica que selinux esta en modo enforcing colocamos lo siguiente para ponerlo en modo permisivo momentaneamente
+
+#setenforce 0
+
+
+
