@@ -70,4 +70,40 @@ Iniciar el demonio de nagios
 
 systemctl start nagios.service
 
+Instalar prerrequisitos para añadir plugins y funcione correctamente nagios
+
+apt-get install -y autoconf gcc libc6 libmcrypt-dev make libssl-dev wget bc gawk dc build-essential snmp libnet-snmp-perl gettext
+
+Descargar y desempaquetar los plugins
+
+cd /tmp
+wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.3.3.tar.gz
+tar zxf nagios-plugins.tar.gz
+
+Compilar e instalar los plugins
+
+cd /tmp/nagios-plugins-release-2.3.3/
+./tools/setup
+./configure
+make
+make install
+
+Hemos terminado regresemos al inicio
+
+cd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
