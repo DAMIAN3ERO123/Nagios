@@ -2,6 +2,6 @@ Para realizar la instalación de Nagios asi como sus pre-requisitos necesitamos 
 
 Si usas Debian coloca el siguiente comando y agrega la contrasañe de root
 
-```
+'''
 su
-```
+'''
