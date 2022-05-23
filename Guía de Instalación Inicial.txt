@@ -12,9 +12,12 @@ Es importante verificar que selinux este en modo permisivo o no este instalado
 
 #getenforce
 
-Si el comando anteriror indica que selinux esta en modo enforcing colocamos lo siguiente para ponerlo en modo permisivo momentaneamente
+Si el comando anteriror indica que selinux esta en modo enforcing colocamos lo siguiente para ponerlo en modo permisivo momentaneamente, de lo contrario
+no es necesario realiar nada
 
 #setenforce 0
+
+
 
 
 
