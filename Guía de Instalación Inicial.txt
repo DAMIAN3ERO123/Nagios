@@ -17,7 +17,16 @@ no es necesario realiar nada
 
 #setenforce 0
 
+Actualizamos e instalamos los paquetes necesarios
 
+#apt-get update
+#apt-get install -y autoconf gcc libc6 make wget unzip apache2 apache2-utils php libgd-dev
+#apt-get install -y openssl libssl-dev
 
+Descargamos y desempaquetamos el archivo source en el directorio tmp
+
+cd /tmp
+wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.6.tar.gz
+tar xzf nagioscore.tar.gz
 
 
