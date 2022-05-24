@@ -1,9 +1,10 @@
 Para realizar la instalación de Nagios asi como sus pre-requisitos necesitamos tener privilegios de administrador.
 
 Si usas Debian coloca el siguiente comando
-'''
+
+```
 $su
-'''
+```
 
 Si usus Raspbian coloca el siguiente comando
 
