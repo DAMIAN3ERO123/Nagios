@@ -10,3 +10,7 @@ Año 2022
 El archivo ejecutable para instalar nagios debe de correrse con privilegios de superusuario de lo contrario te pedira que lo intentes nuevamente
 
 ![Image txt](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/NoAdmin.png)
+
+Deber de ingresar una versión existente de nagios para instalar
+
+![Image txt](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/VersionIncorrecta.png)
