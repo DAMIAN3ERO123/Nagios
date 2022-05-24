@@ -11,6 +11,12 @@ El archivo ejecutable para instalar nagios debe de correrse con privilegios de s
 
 ![Image 1](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/NoAdmin.png)
 
-Deber de ingresar una versión existente de nagios para instalar
+Debes de ingresar una versión existente de nagios para instalar
 
 ![Image 2](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/VersionIncorrecta.png)
+
+Cuando se te pida configurar el firewall unicamente da enter (ve el archivo de instalación inicial para más información)
+
+![Image 3](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/IPT1.png)
+
+![Image 4](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/IPT2.png)
