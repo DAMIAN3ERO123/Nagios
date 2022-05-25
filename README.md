@@ -8,6 +8,7 @@ Los siguientes archivos e instrucciones son aplicablas al SO Debian/Raspbian
 Año 2022
 
 El archivo ejecutable para instalar nagios debe de correrse con privilegios de superusuario de lo contrario te pedira que lo intentes nuevamente
+recuerda darle permisos de ejecución con "chmod +x InstallNagios.sh"
 
 ![Image 1](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/NoAdmin.png)
 
