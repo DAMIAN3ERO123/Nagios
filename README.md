@@ -25,7 +25,7 @@ recuerda darle permisos de ejecución con "chmod +x InstallNagios.sh"
 ![Image 4](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/IPT2.png)
 
 
-4. Se te pèdira que ingreses una contraseña para el usuario nagiosadmin
+4. Se te pedirá que ingreses una contraseña para el usuario nagiosadmin
 ![Image 5](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/password.png)
 
 
