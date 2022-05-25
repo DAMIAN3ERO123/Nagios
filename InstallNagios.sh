@@ -24,70 +24,105 @@ else
 
 		echo "¿Que versión de Nagios deseas instalar?"
 		read VERSION
-		echo $VERSION
-		wget -O nagioscore.tar.gz 'https://github.com/NagiosEnterprises/nagioscore/archive/nagios-$VERSION.tar.gz' 2> /dev/null
+		
 
-		if [ `echo $?` -eq 8 ] 2> /dev/null
+		wget -O nagioscore.tar.gz "https://github.com/NagiosEnterprises/nagioscore/archive/nagios-$VERSION.tar.gz" 2> /dev/null
+
+		if [ `echo $?` -eq 0 ] 2> /dev/null
 		then 
+
+			clear
+
+			echo "Gracias ya me encuentro instalando Nagios"
 
 			BANDERA=1
 
-			apt-get update   
-			apt-get install -y autoconf gcc libc6 make wget unzip apache2 apache2-utils php libgd-dev 
-			apt-get install -y openssl libssl-dev 
+			apt-get update  &> /dev/null 
 
-			tar xzf nagioscore.tar.gz
+			apt-get install -y autoconf gcc libc6 make wget unzip apache2 apache2-utils php libgd-dev &> /dev/null
 
-			cd '/tmp/nagioscore-nagios-$VERSION/'
-			./configure --with-httpd-conf=/etc/apache2/sites-enabled
-			make all
+			apt-get install -y openssl libssl-dev &> /dev/null
 
-			sudo make install-groups-users
-			sudo usermod -a -G nagios www-data
+			tar xzf nagioscore.tar.gz &> /dev/null
 
-			make install
-			make install-daemoninit
-			make install-commandmode
-			make install-config
-			make install-webconf
-			sudo a2enmod rewrite
-			a2enmod cgi
+			cd "/tmp/nagioscore-nagios-$VERSION/" 
 
-			sudo iptables -I INPUT -p tcp --destination-port 80 -j ACCEPT
+			./configure --with-httpd-conf=/etc/apache2/sites-enabled &> /dev/null
+
+			make all &> /dev/null
+
+			sudo make install-groups-users &> /dev/null
+
+			sudo usermod -a -G nagios www-data &> /dev/null
+
+			make install &> /dev/null
+
+			make install-daemoninit &> /dev/null
+
+			make install-commandmode &> /dev/null
+
+			make install-config &> /dev/null
+
+			make install-webconf &> /dev/null
+
+			sudo a2enmod rewrite &> /dev/null
+
+			a2enmod cgi &> /dev/null
+
+			sudo iptables -I INPUT -p tcp --destination-port 80 -j ACCEPT &> /dev/null
+
 			apt-get install -y iptables-persistent
 
+			clear
+
+            echo "escribe un contraseña para el usuario nagiosadmin"
+
 			htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
-			echo hola123.,
-			echo hola123.,
 
-			systemctl restart apache2.service
-			systemctl start nagios.service
+			clear
 
-			apt-get install -y autoconf gcc libc6 libmcrypt-dev make libssl-dev wget bc gawk dc build-essential snmp libnet-snmp-perl gettext
+			echo "Sigo Instalando, ya casí termino"
 
+			systemctl restart apache2.service &> /dev/null
+ 
+			systemctl start nagios.service &> /dev/null
 
-			cd /tmp
-			wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.3.3.tar.gz
-			tar zxf nagios-plugins.tar.gz
+			apt-get install -y autoconf gcc libc6 libmcrypt-dev make libssl-dev wget bc gawk dc build-essential snmp libnet-snmp-perl gettext &> /dev/null
 
-			cd /tmp/nagios-plugins-release-2.3.3/
-			./tools/setup
-			./configure
-			make
-			make install
+			cd /tmp 
 
-			systemctl enable nagios.service
-			systemctl enable apache2.service
+			wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.3.3.tar.gz &> /dev/null
+
+			tar zxf nagios-plugins.tar.gz &> /dev/null
+
+			cd /tmp/nagios-plugins-release-2.3.3/ &> /dev/null
+
+			./tools/setup &> /dev/null
+
+			./configure &> /dev/null
+
+			make &> /dev/null
+
+			make install &> /dev/null
+
+			systemctl enable nagios.service &> /dev/null
+
+			systemctl enable apache2.service &> /dev/null
 
 			cd
+
+			clear
+
+			echo "Felicidades ya esta instalado Nagios Ingresa a tu navegador web e ingresa por ejemplo: http://127.0.0.1/nagios"
+			echo ""
+			echo "Escribe el usuario \"nagiosadmin\" e ingresa la contraseña que creaste"
+
 		else
 			echo "La versión de Nagios no existe intenta con otra"
 		
 		fi
 	done
 fi
-
-
 
 
 
