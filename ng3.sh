@@ -24,11 +24,8 @@ else
 
 		echo "¿Que versión de Nagios deseas instalar?"
 		read VERSION
-		echo $VERSION
+		
 		wget -O nagioscore.tar.gz "https://github.com/NagiosEnterprises/nagioscore/archive/nagios-$VERSION.tar.gz" 2> /dev/null
-
-		file nagioscore.tar.gz
-		read
 
 		if [ `echo $?` -eq 0 ] 2> /dev/null
 		then 
