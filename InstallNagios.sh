@@ -75,7 +75,7 @@ else
 
 			clear
 
-            echo "escribe un contraseña para el usuario nagiosadmin"
+           		echo "escribe un contraseña para el usuario nagiosadmin"
 
 			htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 
