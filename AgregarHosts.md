@@ -29,6 +29,15 @@ define host {
 }
 ```
 
+Ahora editaremos el archivo de configuración de nagios para indicarle que revise el archivo hosts.cfg y así nos muestre su monitoreo
+
+```
+vi /usr/local/nagios/etc/nagios.cfg
+```
+
+Agrega la siguiente linea como se muestra en la imagen
+![imagen 8]()
+
 https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/objectdefinitions.html
 
 
