@@ -28,6 +28,9 @@ define host {
     check_period            24x7
 }
 ```
+Podras definir más hosts en el mismo archivo solo agrega mas plantillas como la anterior modificando los paramentros que estan entre
+picoparentesis <>
+
 
 Ahora editaremos el archivo de configuración de nagios para indicarle que revise el archivo hosts.cfg y así nos muestre su monitoreo
 
@@ -38,6 +41,18 @@ vi /usr/local/nagios/etc/nagios.cfg
 Agrega la siguiente linea como se muestra en la imagen
 ![imagen 8](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/objconfile.png)
 
+Por último reinicia el servicio de nagios
+
+```
+systemctl restart nagios.service
+
+```
+
+Ingresa a tu consola de nagios y podras ver los equipos que has agregado
+![imagen 9](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/hosts.png)
+
+
+Más información en el siguiente link:
 https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/objectdefinitions.html
 
 
