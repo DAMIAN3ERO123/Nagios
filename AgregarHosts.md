@@ -4,7 +4,7 @@ del siguiente directorio "/usr/local/nagios/etc/objects" podemos agregar nuestra
 Usa el siguiente comando para crear el directorio y el archivo en la misma linea 
 
 ```
-# mkdir /usr/local/nagios/etc/objects/hosts && > /usr/local/nagios/etc/objects/hosts.cfg
+# mkdir /usr/local/nagios/etc/objects/hosts && > /usr/local/nagios/etc/objects/hosts/hosts.cfg
 ```
 
 
