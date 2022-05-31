@@ -36,7 +36,7 @@ vi /usr/local/nagios/etc/nagios.cfg
 ```
 
 Agrega la siguiente linea como se muestra en la imagen
-![imagen 8]()
+![imagen 8](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/objconfile.png)
 
 https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/objectdefinitions.html
 
