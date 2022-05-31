@@ -35,7 +35,7 @@ picoparentesis <>
 Ahora editaremos el archivo de configuración de nagios para indicarle que revise el archivo hosts.cfg y así nos muestre su monitoreo
 
 ```
-vi /usr/local/nagios/etc/nagios.cfg
+#vi /usr/local/nagios/etc/nagios.cfg
 ```
 
 Agrega la siguiente linea como se muestra en la imagen
@@ -44,7 +44,7 @@ Agrega la siguiente linea como se muestra en la imagen
 Por último reinicia el servicio de nagios
 
 ```
-systemctl restart nagios.service
+#systemctl restart nagios.service
 
 ```
 
