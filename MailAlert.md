@@ -16,3 +16,6 @@ apt-get install sendmail*
 Localizamos el binario que utiliza por defecto nagios como cliente de correo y lo modificamos para que sea mailx
 
 ![imagen 11](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/mailx.png)
+
+4. Editamos la configuración de nuestros host a monitorear para añadir los parametros de alertas
+![imagen 12](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/confalert.png)
