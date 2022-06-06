@@ -13,6 +13,6 @@ apt-get install sendmail*
 ![imagen 10](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/contacts.png)
 
 3. Editamos el archivo /usr/local/nagios/etc/objects/commands.cfg
-Localizamos el binario que utiliza por defecto nagios como cliente de correo y lo editamos para que sea mailx
+Localizamos el binario que utiliza por defecto nagios como cliente de correo y lo modificamos para que sea mailx
 
 ![imagen 11](https://github.com/DAMIAN3ERO123/Nagios/blob/main/Imagenes/mailx.png)
