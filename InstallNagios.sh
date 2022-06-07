@@ -101,7 +101,7 @@ else
 			echo "Cargando ... 47%"
 
 
-			a2enmod cgi &> /dev/null
+			sudo a2enmod cgi &> /dev/null
 			clear
 			echo "Cargando ... 50%"
 
