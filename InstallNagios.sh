@@ -130,11 +130,15 @@ else
 			echo "Cargando ... 59%"
 
 			systemctl restart apache2.service &> /dev/null
+			# el siguiente comando aplica solo si usamos init
+			service apache2 restart &> /dev/null
 			clear
 			echo "Cargando ... 62%"
 
  
 			systemctl start nagios.service &> /dev/null
+			# el siguiente comando aplica solo si usamos init
+			service nagios restart &> /dev/null
 			clear
 			echo "Cargando ... 65%"
 
