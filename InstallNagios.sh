@@ -8,6 +8,11 @@ then
 	echo "Necesitas tener privilegios de administrador para correr este script intentalo nuevamente"
 
 else
+	wget --version &> /dev/null
+	if [ `echo $?` -ne 0 ] 2> /dev/null
+	then
+		apt-get install wget
+	fi
 
 	sestatus 2> /dev/null
 
