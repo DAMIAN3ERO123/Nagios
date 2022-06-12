@@ -195,7 +195,9 @@ else
 			systemctl enable apache2.service &> /dev/null
 			clear
 			echo "Cargando ... 99%"
-
+			
+			cd /usr/local/nagios &> /dev/null
+			chmod +s /bin/ping &> /dev/null
 
 			cd
 
