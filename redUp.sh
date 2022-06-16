@@ -51,10 +51,11 @@ do
 
     if test $opcion -eq 1
     then 
-        clear
+        
         ip_opcion=0
         while test `echo $ip_opcion -ne 3` 2> /dev/null
         do
+            clear
             echo "Ingresa 1 para agregar todas las IPs encontradas al monitoreo"
             echo "Ingresa 2 para agregar una sola IP"
             echo "Ingresa 3 para volver al menu anterior"
@@ -66,12 +67,24 @@ do
             elif test $ip_opcion -eq 2 2> /dev/null
             then
                 echo "Escrbe el numero de IP a Monitorear"
-                read ip
-                if test `echo $ip | grep -E '^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$'`
-                then
-                    echo "Voy a agregar la IP $ip al Monitoreo.."
+                read ip2
+                if test `echo $ip2 | grep -E '^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$'`
+                then   
+                    grep $ip2 /usr/local/nagios/etc/objects/hosts/hosts.cfg &> /dev/null                
+                    if [ `echo $?` -eq 0 ]
+                    then
+                        clear
+                        echo -e "La IP \"$ip2\" que quieres agregar ya se encuentra en el Monitoreo \npor favor revisa el archivo de configuración"
+                        read
+                    else
+                        clear
+                        echo "Voy a agregar la IP \"$ip2\" al Monitoreo.."
+                        read
+                    fi
                 else 
+                    clear
                     echo "El numero de IP es invalido"
+                    read
                 fi
             elif test $ip_opcion -eq 3
             then 
@@ -79,13 +92,11 @@ do
                 sleep 3
                 clear
             else
-                echo "La opcion  o IP es Invalida, intentalo de nuevo"
+                echo "La opcion o IP es Invalida, intentalo de nuevo"
             fi
-      
         done
     fi
 done
 
 
 rm listaAlcanzables.txt
-
